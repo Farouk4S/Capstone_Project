@@ -33,7 +33,7 @@ dailyIntensities_merged$ActivityDay <- mdy(dailyIntensities_merged$ActivityDay)
 
 ## Convert the Date format to "dd-mm-yyyy"
 dailyIntensities_merged$ActivityDay <- format(
-                            dailyIntensities_merged$ActivityDay, "%d-%m-%Y")  
+                            dailyIntensities_merged$ActivityDay, "%Y-%m-%d")  
 
 # TRANSFORMING THE DATA ########################################################
 
@@ -49,24 +49,82 @@ Intensities_summary <- (dailyIntensities_merged) %>%
             TotalSedentaryActiveDistance = sum(SedentaryActiveDistance, na.rm = TRUE),
             TotalLightActiveDistance = sum(LightActiveDistance, na.rm = TRUE),
             TotalModeratelyActiveDistance = sum(ModeratelyActiveDistance, na.rm = TRUE),
-            TotalVeryActiveDistance = sum(VeryActiveDistance, na.rm = TRUE))
-View(Intensities_summary)
-
-Intensities_sum <- select(Intensities_summary,
-                   c('TotalSedentaryMinutes', 'TotalLightlyActiveMinutes', 
+            TotalVeryActiveDistance = sum(VeryActiveDistance, na.rm = TRUE)) %>%
+  select( c('TotalSedentaryMinutes', 'TotalLightlyActiveMinutes', 
                      'TotalFairlyActiveMinutes', 'TotalVeryActiveMinutes',
                      'TotalSedentaryActiveDistance', 'TotalLightActiveDistance',
                      'TotalModeratelyActiveDistance', 'TotalVeryActiveDistance'))
 
 
-
 # PLOTTING THE DATA ###########################################################
 
+## As i am focusing on the time use of the App
+
+Summary_Minutes <-   select(Intensities_summary, c('TotalSedentaryMinutes', 'TotalLightlyActiveMinutes', 
+                                                   'TotalFairlyActiveMinutes', 'TotalVeryActiveMinutes'))
+
+
+# Calculate the sum for each column as a dataframe
+summary_Minsrow <- data.frame(Value = colSums(Summary_Minutes))
+
+
+# Check for non-positive values
+if (any(summary_Minsrow$Value <= 0)) {
+  stop("All values in summary_Minsrow must be positive.")
+}
+
+
+Total_Mins <- c(sum(Summary_Minutes))
+Total_Mins <- sum(colSums(Summary_Minutes))
+
+labels_mins <- c("TotalSedentaryMinutes", "TotalLightlyActiveMinutes", 
+                 "TotalFairlyActiveMinutes", "TotalVeryActiveMinutes")
+
+# Calculate Time percentages
+percentage_time <- summary_Minsrow / Total_Mins * 100
 
 
 ## Preparing the Plot =====================================================
+
+# Extract numeric value from percentage_time
+num_percent_time <- as.numeric(percentage_time$Value)
+
+
+# Format labels as percentages
+formatted_labels_mins <- paste0(sprintf("%.1f%%", num_percent_time))
+
+
+# Create a color palette
+colors <- rainbow(length(num_percent_time))
 
 
 
 
 ## Plotting The Chart  ========================================================
+
+# Plot the pie chart with formatted labels
+pie(num_percent_time, col = colors,
+    main = "Pie Chart of Use Time") # Labels set to NA
+legend("topright", legend = labels_mins, fill = colors, cex = 0.8) 
+legend("topleft", legend = formatted_labels_mins, fill = colors, cex = 0.8)
+
+
+
+
+## If I focus on the Distance use of the App
+
+Summary_distances <-   select(
+  Intensities_summary, c('TotalSedentaryActiveDistance', 
+                         'TotalLightActiveDistance',
+                         'TotalModeratelyActiveDistance', 
+                         'TotalVeryActiveDistance'))
+
+# Calculate the sum for each column as a dataframe
+summary_disrow <- data.frame(Value = colSums(Summary_distances))
+Total_dis <- c(sum(Summary_distances))
+
+labels_dis <- c("TotalSedentaryActiveDistance", "TotalLightActiveDistance", 
+                "TotalModeratelyActiveDistance", "TotalVeryActiveDistance")
+
+# Calculate Distance percentages
+percentage_dis <- summary_disrow / Total_dis * 100
