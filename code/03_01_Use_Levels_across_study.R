@@ -1,10 +1,10 @@
 
 # This is my Google Data Analytics Project code explained step-by-step.
 
-# File:         02_04_Steps_and_Sleep_of_Users_Analysis
+# File:         03_01_Use_Levels_across_study
 # Project:      Google Data Analysis Capstone Project
 # Title:        How users use smart watch
-# Subtitle:     Do Users who sleep more also take more steps or fewer? 
+# Subtitle:     How long did users use the smart watch? 
 
 # READING THE DATA #############################################################
 
@@ -74,88 +74,78 @@
     sleepDay_merged$Date <- format(sleepDay_merged$Date, "%Y-%m-%d")   
     dailyActivity_merged$Date <- format(dailyActivity_merged$Date, "%Y-%m-%d")   
       
-  
+    
 ## Combined Data  =============================================
+    
     # Note that there were more participant Ids in the daily activity
     # dataset that have been filtered out using merge since they did not have
     # sleep data recorded
-   
     
     ## Merging these two datasets together ##  
     # combined_data <- full_join(sleepDay_merged, dailyActivity_merged, by = c("Id", "Date"))
-    combined_data <- merge(sleepDay_merged, dailyActivity_merged, by = c("Id", "Date"))
+    daily_activity_sleep <- merge(sleepDay_merged, dailyActivity_merged, 
+                           by = c("Id", "Date"))
     
     # Now we can explore some different relationships between activity and sleep.
     # To take a look at how many participants are in this data set.
     
     n_distinct(combined_data$Id)
-    
     #daily_activity_sleep
     
    
 # TRANSFORMING THE DATA ########################################################
 
 ## Group and Summarize Multiple Columns ========================================
-  ## Group and summarize by ID
-  
-  Combined_d_s_byID <- combined_data %>%
-    group_by(Id) %>%
-    select(Id, TotalMinutesAsleep, TotalSteps) %>%
-    summarise(
-      TimeSleeping = sum(TotalMinutesAsleep),
-      StepTotal = sum(TotalSteps, na.rm = TRUE)
-    ) %>%
-    mutate(UserID = row_number()) %>%
-    select(UserID, TimeSleeping, StepTotal)
+  ## Group and summarize by ID and create the Usage Table
+    daily_use <- daily_activity_sleep %>%
+      group_by(Id) %>%
+      summarize(days_used=sum(n())) %>%
+      mutate(Usage = case_when(
+        days_used >= 1 & days_used <= 10 ~ "Low use",
+        days_used >= 11 & days_used <= 20 ~ "Moderate use", 
+        days_used >= 21 & days_used <= 31 ~ "High use", 
+      ))
+    
+    head(daily_use)
+    
   
   ## Group and calculate Average by ID
-  
-  Average_user_Sleep <- combined_data %>%
-    group_by(Id) %>%
-    select(Id, TotalMinutesAsleep, TotalSteps) %>%
-    summarise(
-      TimeSleeping = mean(TotalMinutesAsleep),
-      StepTotal = mean(TotalSteps, na.rm = TRUE)
-    ) %>%
-    mutate(UserID = row_number()) %>%
-    select(UserID, TimeSleeping, StepTotal)
-  
-  View(Average_user_Sleep)
+    Daily_use_percent <- daily_use %>%
+      group_by(Usage) %>%
+      summarise(Freq = n())%>%
+      mutate(Totals = sum(Freq))%>%
+      group_by(Usage) %>%
+      summarise(Total_percent = Freq / Totals)%>%
+      mutate(labels = scales::percent(Total_percent))
+    
+  ## To put the labeling in order
+    Daily_use_percent$Usage <- factor(Daily_use_percent$Usage, 
+                            levels = c("High use", "Moderate use", "Low use"))
+    
+   head(Daily_use_percent)
+    
 # PLOTTING THE DATA ###########################################################
 
 
 ## Preparing the Plot =====================================================
 
-## Plotting The Chart  ========================================================
-
-  ggplot(data = Combined_d_s_byID) +
-    geom_point(mapping = aes(x = TimeSleeping, y = StepTotal, 
-                             color = UserID)) +
-    geom_text(mapping = aes(x = TimeSleeping, y = StepTotal, label = UserID), 
-              vjust = -0.5, hjust = 0.5) +  # Adjust vjust and hjust for label positioning
-    labs(title = "User's Level of Steps and Sleep",
-         x = "User's Time Sleeping",
-         y = "User's Total Steps") +
-    scale_y_continuous(labels = scales::comma) +
-    scale_x_continuous(labels = scales::comma) + # Use comma_format for x-axis labels
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 0, hjust = 1)) +
-    theme(legend.position="none")  # Remove legend 
-  
 ## Plotting The 2nd Chart  ========================================================
   
-  
-  ggplot(data = Average_user_Sleep) +
-    geom_point(mapping = aes(x = TimeSleeping, y = StepTotal, 
-                             color = UserID)) +
-    geom_text(mapping = aes(x = TimeSleeping, y = StepTotal, label = UserID), 
-              vjust = -0.5, hjust = 0.5) +  # Adjust vjust and hjust for label positioning
-    labs(title = "Average User's Level of Steps and Sleep",
-         x = "User's Time Sleeping",
-         y = "User's Total Steps") +
-    scale_y_continuous(labels = scales::comma) +
-    scale_x_continuous(labels = scales::comma) + # Use comma_format for x-axis labels
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 0, hjust = 1)) +
-    theme(legend.position="none")  # Remove legend 
-  
+   ggplot(data = Daily_use_percent, aes(x = "", y = Total_percent, fill = Usage)) +
+     geom_bar(stat = "identity", width = 1, color = "transparent") +
+     coord_polar("y") +
+     geom_text(aes(label = labels), position = position_stack(vjust = 0.5)) +
+     scale_fill_manual(values = c("High use" = "green",
+                                  "Moderate use" = "lightgreen", 
+                                  "Low use" = "grey")) +
+     labs(title = "Use Level Distribution",
+          fill = "Usage",
+          x = NULL,
+          y = NULL) +
+     theme_minimal() +
+     theme(axis.text = element_blank(),
+           axis.title = element_blank(),
+           panel.grid = element_blank(),
+           plot.title = element_text(hjust = 0.5))
+   
+   

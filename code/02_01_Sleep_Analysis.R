@@ -4,7 +4,7 @@
 # File:         02_01_Sleep_Analysis
 # Project:      Google Data Analysis Capstone Project
 # Title:        How users use smart watch
-# Subtitle:     How much sleep did users they get in the for 31 Days Period?
+# Subtitle:     How much sleep did users they get daily in the 31 Days Period?
 
 
 # READING THE DATA #############################################################
@@ -23,6 +23,16 @@ sleepDay_merged <- read_csv("data/sleepDay_merged.csv")
 head(sleepDay_merged)
 
 #  PREPARING THE DATA ########################################################
+
+
+#      To check for duplicates for sleepDay_merged.    
+sum(duplicated(sleepDay_merged))
+
+#      To delete duplicates for sleepDay_merged.      
+sleepDay_merged <- sleepDay_merged %>%
+  distinct() %>%
+  drop_na()
+
 
 # To be able to know the amount of sleep they got each day, I needed the
 # days in a more friendly format.
@@ -78,8 +88,8 @@ daysleep_long_sum <- transform(daysleep_long_sum,
                                Group = rep(1:(nrow(daysleep_long_sum)/2), each = 2))
 
 # Extract unique values of Day_of_Wk and specify the desired order
-days_order <- c("Sunday", "Monday", "Tuesday", 
-                "Wednesday", "Thursday", "Friday", "Saturday")
+days_order <- c("Monday", "Tuesday", 
+                "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 unique_days <- unique(daysleep_long_sum$Day_of_Wk)
 
 ## Plotting The Chart  ========================================================

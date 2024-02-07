@@ -1,48 +1,58 @@
 
 # This is my Google Data Analytics Project code explained step-by-step.
 
-# File:         01_01_Analysis
+# File:         01_01_Daily_Activity_Analysis
 # Project:      Google Data Analysis Capstone Project
-# Title:        How users use smart watch
-# Subtitle:     Users Step Data Analysis for 31 Days Period
+# Title:        How users use their smart device
+# Subtitle:     Daily Activity Snapshot for the 31 Days Period
 
 # READING THE DATA #############################################################
 
-# I started by Installed the tidyverse packages
-
+# I started by Installing the tidyverse package
 install.packages("tidyverse")
 library("tidyverse")
+install.packages("lubridate")
+install.packages("skimr")
 
 # So, I loaded the database from file directory. 
-# Then i used some functions to verify the dataset properties
-
 library(readr)
 dailyActivity_merged <- read_csv("data/dailyActivity_merged.csv")
 #View(dailyActivity_merged)
+
+
+
+# Then i used more packages and functions to confirm the dataset properties
+library("skimr")
 head(dailyActivity_merged)
-
-# I needed to change the date formats. 
-# As my data frame is named 'dailyActivity_merged' and 
-# existing character is mdy format. 
-# I ran this code that converts characters to standard R format of YYYY-MM-DD.
-
-library("dplyr")
-
-dailyActivity_merged$ActivityDate <- mdy(dailyActivity_merged$ActivityDate)
+# skim_without_charts(dailyActivity_merged)
+summary(dailyActivity_merged)
+ n_distinct(dailyActivity_merged$Id)
+# n_distinct(dailyActivity_merged$ActivityDate)
+# sum(duplicated(dailyActivity_merged))
 
 #  PREPARING THE DATA ########################################################
 
-# Then, I converted the Date format to "dd-mm-yyyy"
+## I renamed ActivityDate into Date 
+ dailyActivity_merged <- dailyActivity_merged %>%
+   rename(Date = ActivityDate)
+ 
+# I needed to change the date formats as my data frame is 
+# named 'dailyActivity_merged' and existing character is mdy format. 
+# I ran codes that converts the dates to standard R format of YYYY-MM-DD.
 
-dailyActivity_merged$ActivityDate <- format(dailyActivity_merged$ActivityDate, "%Y-%m-%d")
+library("lubridate")
+dailyActivity_merged$Date <- mdy(dailyActivity_merged$Date)
+dailyActivity_merged$Date <- format(dailyActivity_merged$Date,
+                                            "%Y-%m-%d")
 head(dailyActivity_merged)
 
 # TRANSFORMING THE DATA ########################################################
 
 ## Group and Summarize Multiple Columns ========================================
+library("dplyr")
 
 summary_data <- dailyActivity_merged %>%
-  group_by(ActivityDate) %>%
+  group_by(Date) %>%
   summarise(
     Sum_TotalSteps = sum(TotalSteps, na.rm = TRUE),
     Sum_TotalDistance = sum(TotalDistance, na.rm = TRUE),
@@ -60,7 +70,6 @@ summary_data <- dailyActivity_merged %>%
   )
 
 ## View the resulting dataset
-
 head(summary_data)
 
 
@@ -69,30 +78,30 @@ head(summary_data)
 library("tidyr")
 
 summary_data_long <- summary_data %>%
-  pivot_longer(cols = -ActivityDate,
+  pivot_longer(cols = -Date,
                names_to = "Variable", 
                values_to = "Values")
 head(summary_data_long)
 
 summary_Activity_long <- dailyActivity_merged %>%
-  pivot_longer(cols = -ActivityDate, names_to = "Variable", 
+  pivot_longer(cols = -Date, names_to = "Variable", 
                values_to = "Values")
 
 head(summary_Activity_long)
 
 # Convert ActivityDate to Date class
 summary_data_long <- summary_data_long %>%
-  mutate(Order = as.Date(ActivityDate))
+  mutate(Order = as.Date(Date))
 
 
 # PLOTTING THE DATA ########################################################
 
 ## Plotting the chart
-
+install.packages("ggplot2")
 library(ggplot2)
 
 ggplot(data = summary_data_long %>% filter(Variable %in% c("Sum_TotalSteps", "Sum_Calories"))) +
-  geom_line(mapping=aes(x = ActivityDate, y = Values, 
+  geom_line(mapping=aes(x = Date, y = Values, 
                         color = Variable, group = Variable)) +
   labs(title = "Daily Activity Snapshot",
        x = "Date",
