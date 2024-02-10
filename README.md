@@ -1,8 +1,8 @@
 # CAPSTONE PROJECT GUIDING BELLABEAT ON HER MARKETING STRATEGY
-Fitness Tracking and Heath consciousness has arguably grown to become a bigger cultural phenomenon post-covid but it is not only an in-vogue thing to do, it can be a great way to live a healthy life. However, anyone that has tried to build a consistent exercise of healthy habit will know (remember new year wave of fitness goals), you need all the supporting environment you can get. Many companies like Bellabeat are already forging ahead to make the decisions about everyone’s health a smart weaable away.
-I recently assumed the role of Bellabeats Data Analyst in the Marketing department. The wearables market has been growning since 2016, to reach 30B dollars in the latest figure in 2022. This growth curve and uptake in this market is exactly what has presented it with the potential to become a larger player
-This project responds to Bellabeats need to understand trends users and potential users of her smart watch product, TIME, so as to market its product to them and claim more share of the global smart watch market.
-I have developed my analysis in R and provided 4 recommendations to Bellabeat's top decision makers.
+Fitness Tracking and Heath consciousness has arguably grown to become a bigger cultural phenomenon post-covid but it is not only an in-vogue thing to do, it can be a great way to live a healthy life. However, anyone that has tried to build a consistent exercise of healthy habit will know (remember new year wave of fitness goals), you need all the supporting environment you can get. Many companies like Bellabeat are already forging ahead to make the decisions about everyone’s health a smart weaable away. 
+  I recently assumed the role of Bellabeats Data Analyst in the Marketing department. The wearables market has been growning since 2016, to reach 30B dollars in the latest figure in 2022. This growth curve and uptake in this market is exactly what has presented it with the potential to become a larger player.
+  This project responds to Bellabeats need to understand trends users and potential users of her smart watch product, TIME, so as to market its product to them and claim more share of the global smart watch market.
+  I have developed my analysis in R and provided 4 recommendations to Bellabeat's top decision makers.
 
 ### What they really want to do.
 Bellabeat wanted to reduce uncertainty in the business’s decisions on their marketing strategies, by knowing,
