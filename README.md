@@ -26,7 +26,7 @@ In Summary, the trends amongst users of FitBit smart watch are:
 5. A positive correlation between steps taken and calories burnt exits.
 6. Users were mostly active during lunch time from 12 pm to 2 pm, and in the evening, from 5 pm to 7 pm. This period is also when the most calories are burnt.
 
-## RECOMMENDATIONS FOR BELLABEAT MARKETING STRATEGY
+## RECOMMENDATIONS FOR BELLABEAT’S MARKETING STRATEGY
 In Summary, my recommendations to guide Bellabeat’s marketing strategy for Time, the smart watch product are:
 1. Intelligent Notifications Feature
 2. #bettertogether marketing campaign
