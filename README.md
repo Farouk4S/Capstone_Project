@@ -4,19 +4,19 @@ I recently assumed the role of Bellabeats Data Analyst in the Marketing departme
 This project responds to Bellabeats need to understand trends users and potential users of her smart watch product, TIME, so as to market its product to them and claim more share of the global smart watch market.
 I have developed my analysis in R and provided 4 recommendations to Bellabeat's top decision makers.
 
-## What they really want to do.
+### What they really want to do.
 Bellabeat wanted to reduce uncertainty in the business’s decisions on their marketing strategies, by knowing,
 1.	What Interests potential users, what did they want to know and track about their health?
 2.	What features were potential users most likely to need and use?
 3.	What and how can the Bellabeat product sell to potential users as it benefits?
 
-## What I have helped them with. 
+### What I have helped them with. 
 I have analysed a publicly available dataset of 31 users who consented to the submission of their personal FitBit tracker data, about things like physical activity and sleep monitoring to
 1.	Understand how potential users will use their smart devices from some of the trends in smart device usage from the study
 2.	Use the analysis to help Bellabeat make marketing strategy decisions. 
 
-# FINDINGS FROM ANALYSIS IN R
-In Summary, my recommendations to guide Bellabeat’s marketing strategy are:
+## FINDINGS FROM ANALYSIS IN R
+In Summary, the trends amongst users of FitBit smart watch are:
 -	38% of users did not use the device more than 10 days within the period.
 -	Users took 7,500 steps every day except Sunday.
 -	Users are not getting adequate 8 hours of recommended sleep.
@@ -24,9 +24,9 @@ In Summary, my recommendations to guide Bellabeat’s marketing strategy are:
 -	A positive correlation between steps taken and calories burnt exits.
 -	Users were mostly active during lunch time from 12 pm to 2 pm, and in the evening, from 5 pm to 7 pm. This period is also when the most calories are burnt.
 
-# RECOMMENDATIONS FOR BELLABEAT MARKETING STRATEGY
-In Summary, my recommendations to guide Bellabeat’s marketing strategy are:
-- Intelligent Notifications
+## RECOMMENDATIONS FOR BELLABEAT MARKETING STRATEGY
+In Summary, my recommendations to guide Bellabeat’s marketing strategy for Time, the smart watch product are:
+- Intelligent Notifications Feature
 - #bettertogether marketing campaign
 - #TimeforWomen marketing campaign
 - Bellabeat Membership
