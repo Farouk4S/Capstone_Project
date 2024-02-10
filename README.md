@@ -7,13 +7,13 @@ This project responds to Bellabeat’s need to understand trends users and poten
 I have developed my analysis in R and provided 4 recommendations to Bellabeat's top decision makers.
 
 ### What they really want to do.
-Bellabeat wanted to reduce uncertainty in the business’s decisions on their marketing strategies, by knowing,
+Bellabeat wanted to reduce uncertainty in the business’s decisions on their marketing strategies, by knowing:
 1.	What Interests potential users, what did they want to know and track about their health?
 2.	What features were potential users most likely to need and use?
 3.	What and how can the Bellabeat product sell to potential users as it benefits?
 
 ### What I have helped them with. 
-I have analysed a publicly available dataset of 31 users who consented to the submission of their personal FitBit tracker data, about things like physical activity and sleep monitoring to
+I have analysed a publicly available dataset of 31 users who consented to the submission of their personal FitBit tracker data, about things like physical activity and sleep monitoring to:
 1.	Understand how potential users will use their smart devices from some of the trends in smart device usage from the study
 2.	Use the analysis to help Bellabeat make marketing strategy decisions. 
 
