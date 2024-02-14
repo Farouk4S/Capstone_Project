@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "5481bac4",
+   "id": "e12d0ecf",
    "metadata": {
     "papermill": {
-     "duration": 0.010307,
-     "end_time": "2024-02-13T21:26:35.646513",
+     "duration": 0.006277,
+     "end_time": "2024-02-14T07:32:32.178463",
      "exception": false,
-     "start_time": "2024-02-13T21:26:35.636206",
+     "start_time": "2024-02-14T07:32:32.172186",
      "status": "completed"
     },
     "tags": []
@@ -17,7 +17,7 @@
     "# **CAPSTONE PROJECT GUIDING BELLABEAT ON HER MARKETING STRATEGY**\n",
     "\n",
     "\n",
-    "## **1.0 INTRODUCTION**\n",
+    "# **1.0 INTRODUCTION**\n",
     "\n",
     "Fitness Tracking and Heath consciousness has arguably grown to become a bigger cultural phenomenon post-covid but it is not only an in-vogue thing to do, it can be a great way to live a healthy life. However, anyone that has tried to build a consistent exercise habit, or any healthy habit (remember new year wave of fitness goals?), will know you need all the supporting environment you can get. Many companies like Bellabeat are already forging ahead to make the decisions about everyone’s health a smart wearable away.\n",
     "\n",
@@ -28,19 +28,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e2e0ae96",
+   "id": "5768569e",
    "metadata": {
     "papermill": {
-     "duration": 0.009115,
-     "end_time": "2024-02-13T21:26:35.664708",
+     "duration": 0.005449,
+     "end_time": "2024-02-14T07:32:32.189293",
      "exception": false,
-     "start_time": "2024-02-13T21:26:35.655593",
+     "start_time": "2024-02-14T07:32:32.183844",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "## **2.0 ASK PHASE:**\n",
+    "# **2.0 ASK PHASE:**\n",
     "\n",
     "This project addresses a business question, a strategic one in fact, and as such has the interest of Bellabeat’s top decision-makers. The following are the stakeholders on this project.\n",
     "\n",
@@ -69,23 +69,23 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9887b920",
+   "id": "7b92a046",
    "metadata": {
     "papermill": {
-     "duration": 0.009064,
-     "end_time": "2024-02-13T21:26:35.682686",
+     "duration": 0.005435,
+     "end_time": "2024-02-14T07:32:32.200006",
      "exception": false,
-     "start_time": "2024-02-13T21:26:35.673622",
+     "start_time": "2024-02-14T07:32:32.194571",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "## **3.0 DATA PREPARATION:**\n",
+    "# **3.0 DATA PREPARATION:**\n",
     "\n",
     "Bellabeat understands an analysis of available consumer data can help reveal more growth opportunities. The CCO has therefore signposted the publicly available FitBit Fitness Tracker Data on Kaggle for this project. \n",
     "\n",
-    "### 3.1 Data Source:\n",
+    "## 3.1 Data Source:\n",
     "The FitBit Fitness Tracker Data was made available by Möbius under a Creative Commons Licence which gives free access of use. It represents 33 eligible Fitbit users who consented to participating in a survey distributed via Amazon Mechanical Turk between 03.12.2016 and 05.12.2016. By doing so, they consented to the submission of their personal tracker data, including minute-level output for physical activity, heart rate, and sleep monitoring. From my learning in the Google Data Analysis course, the first step I took before starting the analysis was to verify that the data meets \"ROCCC requirements”.\n",
     "\n",
     "•\tReliable to be accurate, complete, and fit for use, that doesn’t appear to be biased.\n",
@@ -110,19 +110,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "94ea72ad",
+   "id": "9005c47d",
    "metadata": {
     "papermill": {
-     "duration": 0.009203,
-     "end_time": "2024-02-13T21:26:35.700830",
+     "duration": 0.005233,
+     "end_time": "2024-02-14T07:32:32.210625",
      "exception": false,
-     "start_time": "2024-02-13T21:26:35.691627",
+     "start_time": "2024-02-14T07:32:32.205392",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "### **4.0 DATA PROCESSING:**\n",
+    "# **4.0 DATA PROCESSING:**\n",
     "\n",
     "Data processing happens in the process phase of the data analysis process. This will help achieve the goal of being able to draw out analysis from the data. \n",
     "Using R, I loaded the relevant packages and functions. Then, considering the characteristics of the data files we have as detailed in the references, I started by processing the daily_Activity_merged dataset. \n"
@@ -131,19 +131,19 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "3950c02d",
+   "id": "4a8137f9",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:35.724739Z",
-     "iopub.status.busy": "2024-02-13T21:26:35.722434Z",
-     "iopub.status.idle": "2024-02-13T21:26:37.849542Z",
-     "shell.execute_reply": "2024-02-13T21:26:37.847714Z"
+     "iopub.execute_input": "2024-02-14T07:32:32.224708Z",
+     "iopub.status.busy": "2024-02-14T07:32:32.222972Z",
+     "iopub.status.idle": "2024-02-14T07:32:33.992290Z",
+     "shell.execute_reply": "2024-02-14T07:32:33.990558Z"
     },
     "papermill": {
-     "duration": 2.142447,
-     "end_time": "2024-02-13T21:26:37.852303",
+     "duration": 1.778991,
+     "end_time": "2024-02-14T07:32:33.994824",
      "exception": false,
-     "start_time": "2024-02-13T21:26:35.709856",
+     "start_time": "2024-02-14T07:32:32.215833",
      "status": "completed"
     },
     "tags": []
@@ -451,13 +451,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "758dba19",
+   "id": "4eeafd20",
    "metadata": {
     "papermill": {
-     "duration": 0.01331,
-     "end_time": "2024-02-13T21:26:37.878845",
+     "duration": 0.00764,
+     "end_time": "2024-02-14T07:32:34.010517",
      "exception": false,
-     "start_time": "2024-02-13T21:26:37.865535",
+     "start_time": "2024-02-14T07:32:34.002877",
      "status": "completed"
     },
     "tags": []
@@ -485,19 +485,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "f84da8bf",
+   "id": "97d259c7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:37.940968Z",
-     "iopub.status.busy": "2024-02-13T21:26:37.905926Z",
-     "iopub.status.idle": "2024-02-13T21:26:39.669923Z",
-     "shell.execute_reply": "2024-02-13T21:26:39.667987Z"
+     "iopub.execute_input": "2024-02-14T07:32:34.050437Z",
+     "iopub.status.busy": "2024-02-14T07:32:34.027568Z",
+     "iopub.status.idle": "2024-02-14T07:32:35.220142Z",
+     "shell.execute_reply": "2024-02-14T07:32:35.218697Z"
     },
     "papermill": {
-     "duration": 1.781051,
-     "end_time": "2024-02-13T21:26:39.672404",
+     "duration": 1.204033,
+     "end_time": "2024-02-14T07:32:35.222044",
      "exception": false,
-     "start_time": "2024-02-13T21:26:37.891353",
+     "start_time": "2024-02-14T07:32:34.018011",
      "status": "completed"
     },
     "tags": []
@@ -732,13 +732,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "69b0b368",
+   "id": "4e6fbaa3",
    "metadata": {
     "papermill": {
-     "duration": 0.013807,
-     "end_time": "2024-02-13T21:26:39.700630",
+     "duration": 0.008086,
+     "end_time": "2024-02-14T07:32:35.238484",
      "exception": false,
-     "start_time": "2024-02-13T21:26:39.686823",
+     "start_time": "2024-02-14T07:32:35.230398",
      "status": "completed"
     },
     "tags": []
@@ -750,19 +750,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "68e7071a",
+   "id": "803c9331",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:39.734294Z",
-     "iopub.status.busy": "2024-02-13T21:26:39.732484Z",
-     "iopub.status.idle": "2024-02-13T21:26:39.871894Z",
-     "shell.execute_reply": "2024-02-13T21:26:39.869897Z"
+     "iopub.execute_input": "2024-02-14T07:32:35.258732Z",
+     "iopub.status.busy": "2024-02-14T07:32:35.257365Z",
+     "iopub.status.idle": "2024-02-14T07:32:35.365181Z",
+     "shell.execute_reply": "2024-02-14T07:32:35.363811Z"
     },
     "papermill": {
-     "duration": 0.159719,
-     "end_time": "2024-02-13T21:26:39.874419",
+     "duration": 0.119662,
+     "end_time": "2024-02-14T07:32:35.366896",
      "exception": false,
-     "start_time": "2024-02-13T21:26:39.714700",
+     "start_time": "2024-02-14T07:32:35.247234",
      "status": "completed"
     },
     "tags": []
@@ -946,19 +946,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "fc4893c6",
+   "id": "2f987617",
    "metadata": {
     "papermill": {
-     "duration": 0.014122,
-     "end_time": "2024-02-13T21:26:39.903223",
+     "duration": 0.009351,
+     "end_time": "2024-02-14T07:32:35.384973",
      "exception": false,
-     "start_time": "2024-02-13T21:26:39.889101",
+     "start_time": "2024-02-14T07:32:35.375622",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "## 5.0 ANALYSIS AND FINDINGS:\n",
+    "# **5.0 ANALYSIS AND FINDINGS:**\n",
     "\n",
     "At this point, I can begin analysing the prepared datasets to identify trends we can use to guide Bellabeat's marketing strategy. However, since our business concern is about big picture understanding, I will approach the analysis with this in mind and adopt daily or hourly analysis at most. I will also concern myself more with the group’s total trends forgoing minute-level details or analysis.\n",
     "\n",
@@ -968,19 +968,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "02e846d7",
+   "id": "d4942e7a",
    "metadata": {
     "papermill": {
-     "duration": 0.013879,
-     "end_time": "2024-02-13T21:26:39.931081",
+     "duration": 0.008608,
+     "end_time": "2024-02-14T07:32:35.402412",
      "exception": false,
-     "start_time": "2024-02-13T21:26:39.917202",
+     "start_time": "2024-02-14T07:32:35.393804",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "### 5.1.0. Daily activity level and calories burnt \n",
+    "## 5.1.0. Daily activity level and calories burnt \n",
     "\n",
     "Looking at the resulting charts from daily activity data, the steps and calories do seem to be correlated. Any dip or increase in the steps users took during the day resulted in a similar dip or increase in the amount of calories burnt. \n"
    ]
@@ -988,19 +988,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "cbf1d7eb",
+   "id": "674cf9ef",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:39.963123Z",
-     "iopub.status.busy": "2024-02-13T21:26:39.961284Z",
-     "iopub.status.idle": "2024-02-13T21:26:40.750069Z",
-     "shell.execute_reply": "2024-02-13T21:26:40.747925Z"
+     "iopub.execute_input": "2024-02-14T07:32:35.423077Z",
+     "iopub.status.busy": "2024-02-14T07:32:35.421572Z",
+     "iopub.status.idle": "2024-02-14T07:32:36.076542Z",
+     "shell.execute_reply": "2024-02-14T07:32:36.074345Z"
     },
     "papermill": {
-     "duration": 0.80783,
-     "end_time": "2024-02-13T21:26:40.752863",
+     "duration": 0.668493,
+     "end_time": "2024-02-14T07:32:36.079560",
      "exception": false,
-     "start_time": "2024-02-13T21:26:39.945033",
+     "start_time": "2024-02-14T07:32:35.411067",
      "status": "completed"
     },
     "tags": []
@@ -1213,13 +1213,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d134eaa6",
+   "id": "f8892f31",
    "metadata": {
     "papermill": {
-     "duration": 0.016092,
-     "end_time": "2024-02-13T21:26:40.785325",
+     "duration": 0.01035,
+     "end_time": "2024-02-14T07:32:36.100760",
      "exception": false,
-     "start_time": "2024-02-13T21:26:40.769233",
+     "start_time": "2024-02-14T07:32:36.090410",
      "status": "completed"
     },
     "tags": []
@@ -1231,19 +1231,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "3a01920f",
+   "id": "e8e34205",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:40.821235Z",
-     "iopub.status.busy": "2024-02-13T21:26:40.819320Z",
-     "iopub.status.idle": "2024-02-13T21:26:40.961574Z",
-     "shell.execute_reply": "2024-02-13T21:26:40.959392Z"
+     "iopub.execute_input": "2024-02-14T07:32:36.125087Z",
+     "iopub.status.busy": "2024-02-14T07:32:36.123431Z",
+     "iopub.status.idle": "2024-02-14T07:32:36.233827Z",
+     "shell.execute_reply": "2024-02-14T07:32:36.232202Z"
     },
     "papermill": {
-     "duration": 0.163543,
-     "end_time": "2024-02-13T21:26:40.964742",
+     "duration": 0.125355,
+     "end_time": "2024-02-14T07:32:36.236047",
      "exception": false,
-     "start_time": "2024-02-13T21:26:40.801199",
+     "start_time": "2024-02-14T07:32:36.110692",
      "status": "completed"
     },
     "tags": []
@@ -1282,13 +1282,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ac1668df",
+   "id": "1edba71d",
    "metadata": {
     "papermill": {
-     "duration": 0.017629,
-     "end_time": "2024-02-13T21:26:41.000242",
+     "duration": 0.010766,
+     "end_time": "2024-02-14T07:32:36.257960",
      "exception": false,
-     "start_time": "2024-02-13T21:26:40.982613",
+     "start_time": "2024-02-14T07:32:36.247194",
      "status": "completed"
     },
     "tags": []
@@ -1302,19 +1302,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "496ba8c6",
+   "id": "969fbabd",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:41.039738Z",
-     "iopub.status.busy": "2024-02-13T21:26:41.037877Z",
-     "iopub.status.idle": "2024-02-13T21:26:41.489951Z",
-     "shell.execute_reply": "2024-02-13T21:26:41.276033Z"
+     "iopub.execute_input": "2024-02-14T07:32:36.283022Z",
+     "iopub.status.busy": "2024-02-14T07:32:36.281614Z",
+     "iopub.status.idle": "2024-02-14T07:32:36.643078Z",
+     "shell.execute_reply": "2024-02-14T07:32:36.437574Z"
     },
     "papermill": {
-     "duration": 0.475018,
-     "end_time": "2024-02-13T21:26:41.492977",
+     "duration": 0.376195,
+     "end_time": "2024-02-14T07:32:36.645165",
      "exception": false,
-     "start_time": "2024-02-13T21:26:41.017959",
+     "start_time": "2024-02-14T07:32:36.268970",
      "status": "completed"
     },
     "tags": []
@@ -1364,39 +1364,39 @@
   },
   {
    "cell_type": "markdown",
-   "id": "afe48bbd",
+   "id": "3b8f725c",
    "metadata": {
     "papermill": {
-     "duration": 0.01808,
-     "end_time": "2024-02-13T21:26:41.529237",
+     "duration": 0.010985,
+     "end_time": "2024-02-14T07:32:36.667202",
      "exception": false,
-     "start_time": "2024-02-13T21:26:41.511157",
+     "start_time": "2024-02-14T07:32:36.656217",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
     "\n",
-    "### 4.2.0. Daily activity \n",
+    "## 5.2.0. Daily activity \n",
     "To know what time of the day users burn the most calories, we can now investigate the relationship between steps and calories further."
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "0c75b69c",
+   "id": "e519301b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:41.569475Z",
-     "iopub.status.busy": "2024-02-13T21:26:41.567836Z",
-     "iopub.status.idle": "2024-02-13T21:26:42.221280Z",
-     "shell.execute_reply": "2024-02-13T21:26:42.219075Z"
+     "iopub.execute_input": "2024-02-14T07:32:36.692014Z",
+     "iopub.status.busy": "2024-02-14T07:32:36.690859Z",
+     "iopub.status.idle": "2024-02-14T07:32:37.157625Z",
+     "shell.execute_reply": "2024-02-14T07:32:37.156195Z"
     },
     "papermill": {
-     "duration": 0.67713,
-     "end_time": "2024-02-13T21:26:42.224337",
+     "duration": 0.481451,
+     "end_time": "2024-02-14T07:32:37.159618",
      "exception": false,
-     "start_time": "2024-02-13T21:26:41.547207",
+     "start_time": "2024-02-14T07:32:36.678167",
      "status": "completed"
     },
     "tags": []
@@ -1546,20 +1546,20 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3530af33",
+   "id": "c4fdc9b5",
    "metadata": {
     "papermill": {
-     "duration": 0.020485,
-     "end_time": "2024-02-13T21:26:42.265103",
+     "duration": 0.011663,
+     "end_time": "2024-02-14T07:32:37.183432",
      "exception": false,
-     "start_time": "2024-02-13T21:26:42.244618",
+     "start_time": "2024-02-14T07:32:37.171769",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
     "\n",
-    "### 5.3.0 Levels of use and Minutes of Activeness:\n",
+    "## 5.3.0 Levels of use and Minutes of Activeness:\n",
     "\n",
     "Whilst these datasets do not contain descriptive data about the population, we can still look at the use levels of the smart devices from the time and distances recorded. This may help us classify users accordingly to see some trends amongst the different groups. We classify users based on how much time they spent on their device, with the assumption that those that spend more time working on their fitness are more likely to use the new features.\n",
     "\n",
@@ -1571,19 +1571,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "f2212d06",
+   "id": "aeb7a9b6",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:42.309179Z",
-     "iopub.status.busy": "2024-02-13T21:26:42.307611Z",
-     "iopub.status.idle": "2024-02-13T21:26:42.787270Z",
-     "shell.execute_reply": "2024-02-13T21:26:42.785451Z"
+     "iopub.execute_input": "2024-02-14T07:32:37.212178Z",
+     "iopub.status.busy": "2024-02-14T07:32:37.210772Z",
+     "iopub.status.idle": "2024-02-14T07:32:37.581694Z",
+     "shell.execute_reply": "2024-02-14T07:32:37.580203Z"
     },
     "papermill": {
-     "duration": 0.504804,
-     "end_time": "2024-02-13T21:26:42.789998",
+     "duration": 0.387446,
+     "end_time": "2024-02-14T07:32:37.583876",
      "exception": false,
-     "start_time": "2024-02-13T21:26:42.285194",
+     "start_time": "2024-02-14T07:32:37.196430",
      "status": "completed"
     },
     "tags": []
@@ -1760,13 +1760,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "44e447ef",
+   "id": "e944633e",
    "metadata": {
     "papermill": {
-     "duration": 0.021209,
-     "end_time": "2024-02-13T21:26:42.833124",
+     "duration": 0.013147,
+     "end_time": "2024-02-14T07:32:37.610532",
      "exception": false,
-     "start_time": "2024-02-13T21:26:42.811915",
+     "start_time": "2024-02-14T07:32:37.597385",
      "status": "completed"
     },
     "tags": []
@@ -1778,19 +1778,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "479ed86a",
+   "id": "578c280e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:42.879335Z",
-     "iopub.status.busy": "2024-02-13T21:26:42.877723Z",
-     "iopub.status.idle": "2024-02-13T21:26:43.144242Z",
-     "shell.execute_reply": "2024-02-13T21:26:43.142165Z"
+     "iopub.execute_input": "2024-02-14T07:32:37.639749Z",
+     "iopub.status.busy": "2024-02-14T07:32:37.638429Z",
+     "iopub.status.idle": "2024-02-14T07:32:37.861054Z",
+     "shell.execute_reply": "2024-02-14T07:32:37.859592Z"
     },
     "papermill": {
-     "duration": 0.292816,
-     "end_time": "2024-02-13T21:26:43.146757",
+     "duration": 0.239809,
+     "end_time": "2024-02-14T07:32:37.863214",
      "exception": false,
-     "start_time": "2024-02-13T21:26:42.853941",
+     "start_time": "2024-02-14T07:32:37.623405",
      "status": "completed"
     },
     "tags": []
@@ -1905,13 +1905,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "56550ef1",
+   "id": "eb6422fc",
    "metadata": {
     "papermill": {
-     "duration": 0.02273,
-     "end_time": "2024-02-13T21:26:43.192907",
+     "duration": 0.014268,
+     "end_time": "2024-02-14T07:32:37.891800",
      "exception": false,
-     "start_time": "2024-02-13T21:26:43.170177",
+     "start_time": "2024-02-14T07:32:37.877532",
      "status": "completed"
     },
     "tags": []
@@ -1922,38 +1922,38 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6bb0489c",
+   "id": "0f7be2c0",
    "metadata": {
     "papermill": {
-     "duration": 0.022439,
-     "end_time": "2024-02-13T21:26:43.238918",
+     "duration": 0.014132,
+     "end_time": "2024-02-14T07:32:37.920256",
      "exception": false,
-     "start_time": "2024-02-13T21:26:43.216479",
+     "start_time": "2024-02-14T07:32:37.906124",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "### 5.4.0 Weekly Sleep Pattern:\n",
+    "## 5.4.0 Weekly Sleep Pattern:\n",
     "\n"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "f14846a8",
+   "id": "b92f45a7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:43.287860Z",
-     "iopub.status.busy": "2024-02-13T21:26:43.286083Z",
-     "iopub.status.idle": "2024-02-13T21:26:43.756452Z",
-     "shell.execute_reply": "2024-02-13T21:26:43.754366Z"
+     "iopub.execute_input": "2024-02-14T07:32:37.951484Z",
+     "iopub.status.busy": "2024-02-14T07:32:37.950168Z",
+     "iopub.status.idle": "2024-02-14T07:32:38.312095Z",
+     "shell.execute_reply": "2024-02-14T07:32:38.310483Z"
     },
     "papermill": {
-     "duration": 0.497746,
-     "end_time": "2024-02-13T21:26:43.758949",
+     "duration": 0.379677,
+     "end_time": "2024-02-14T07:32:38.313880",
      "exception": false,
-     "start_time": "2024-02-13T21:26:43.261203",
+     "start_time": "2024-02-14T07:32:37.934203",
      "status": "completed"
     },
     "tags": []
@@ -2024,13 +2024,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5783a6e1",
+   "id": "ea6a1fb4",
    "metadata": {
     "papermill": {
-     "duration": 0.023494,
-     "end_time": "2024-02-13T21:26:43.806521",
+     "duration": 0.014157,
+     "end_time": "2024-02-14T07:32:38.342612",
      "exception": false,
-     "start_time": "2024-02-13T21:26:43.783027",
+     "start_time": "2024-02-14T07:32:38.328455",
      "status": "completed"
     },
     "tags": []
@@ -2042,19 +2042,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "85d6f482",
+   "id": "1d8177cc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:43.857688Z",
-     "iopub.status.busy": "2024-02-13T21:26:43.855867Z",
-     "iopub.status.idle": "2024-02-13T21:26:44.205036Z",
-     "shell.execute_reply": "2024-02-13T21:26:44.202959Z"
+     "iopub.execute_input": "2024-02-14T07:32:38.374527Z",
+     "iopub.status.busy": "2024-02-14T07:32:38.373095Z",
+     "iopub.status.idle": "2024-02-14T07:32:38.672370Z",
+     "shell.execute_reply": "2024-02-14T07:32:38.670982Z"
     },
     "papermill": {
-     "duration": 0.377621,
-     "end_time": "2024-02-13T21:26:44.207677",
+     "duration": 0.317791,
+     "end_time": "2024-02-14T07:32:38.674610",
      "exception": false,
-     "start_time": "2024-02-13T21:26:43.830056",
+     "start_time": "2024-02-14T07:32:38.356819",
      "status": "completed"
     },
     "tags": []
@@ -2251,13 +2251,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8898547b",
+   "id": "a38681e7",
    "metadata": {
     "papermill": {
-     "duration": 0.024728,
-     "end_time": "2024-02-13T21:26:44.258074",
+     "duration": 0.015174,
+     "end_time": "2024-02-14T07:32:38.705878",
      "exception": false,
-     "start_time": "2024-02-13T21:26:44.233346",
+     "start_time": "2024-02-14T07:32:38.690704",
      "status": "completed"
     },
     "tags": []
@@ -2282,19 +2282,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "41b30053",
+   "id": "460fc7cf",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2024-02-13T21:26:44.312244Z",
-     "iopub.status.busy": "2024-02-13T21:26:44.310483Z",
-     "iopub.status.idle": "2024-02-13T21:26:44.868104Z",
-     "shell.execute_reply": "2024-02-13T21:26:44.866020Z"
+     "iopub.execute_input": "2024-02-14T07:32:38.740822Z",
+     "iopub.status.busy": "2024-02-14T07:32:38.739395Z",
+     "iopub.status.idle": "2024-02-14T07:32:39.205793Z",
+     "shell.execute_reply": "2024-02-14T07:32:39.204102Z"
     },
     "papermill": {
-     "duration": 0.587004,
-     "end_time": "2024-02-13T21:26:44.870477",
+     "duration": 0.4864,
+     "end_time": "2024-02-14T07:32:39.208249",
      "exception": false,
-     "start_time": "2024-02-13T21:26:44.283473",
+     "start_time": "2024-02-14T07:32:38.721849",
      "status": "completed"
     },
     "tags": []
@@ -2365,19 +2365,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "de8ca805",
+   "id": "9e87b8c4",
    "metadata": {
     "papermill": {
-     "duration": 0.025757,
-     "end_time": "2024-02-13T21:26:44.922730",
+     "duration": 0.015736,
+     "end_time": "2024-02-14T07:32:39.240090",
      "exception": false,
-     "start_time": "2024-02-13T21:26:44.896973",
+     "start_time": "2024-02-14T07:32:39.224354",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "### 6.0 RECOMMENDATION:\n",
+    "# **6.0 RECOMMENDATION:**\n",
     "\n",
     "The value in this project and the insights discovered so far is in providing potential value to Bellabeat, to understand its market needs and communicate its products as the best solution for potential users, young and adult women. I would, therefore, recommend that Bellabeat develops its marketing strategy around Fill’s (2006) DRIP marketing Framework.\n",
     "\n",
@@ -2436,20 +2436,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6bd708a8",
+   "id": "aa03d884",
    "metadata": {
     "papermill": {
-     "duration": 0.026406,
-     "end_time": "2024-02-13T21:26:44.974571",
+     "duration": 0.015901,
+     "end_time": "2024-02-14T07:32:39.271497",
      "exception": false,
-     "start_time": "2024-02-13T21:26:44.948165",
+     "start_time": "2024-02-14T07:32:39.255596",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "\n",
-    "### 7.0 LIMITATIONS:\n",
+    "# **7.0 LIMITATIONS**\n",
     "\n",
     "Due to the drawbacks of this dataset, a small sample size, and inadequacy I would recommend Bellabeat to consider additional data and perhaps use their data as well.\n",
     "\n",
@@ -2459,19 +2458,19 @@
   },
   {
    "cell_type": "markdown",
-   "id": "73f594b3",
+   "id": "1d7b8a34",
    "metadata": {
     "papermill": {
-     "duration": 0.025785,
-     "end_time": "2024-02-13T21:26:45.025809",
+     "duration": 0.015911,
+     "end_time": "2024-02-14T07:32:39.302948",
      "exception": false,
-     "start_time": "2024-02-13T21:26:45.000024",
+     "start_time": "2024-02-14T07:32:39.287037",
      "status": "completed"
     },
     "tags": []
    },
    "source": [
-    "### 8.0 CREDITS:\n",
+    "# **8.0 CREDITS:**\n",
     "\n",
     "Bellabeat - Case study | Kaggle.  Available at: https://www.kaggle.com/code/julenaranguren/bellabeat-case-study/notebook\n",
     "\n",
@@ -2526,14 +2525,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 13.20794,
-   "end_time": "2024-02-13T21:26:45.174189",
+   "duration": 10.479732,
+   "end_time": "2024-02-14T07:32:39.439390",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2024-02-13T21:26:31.966249",
+   "start_time": "2024-02-14T07:32:28.959658",
    "version": "2.5.0"
   }
  },
